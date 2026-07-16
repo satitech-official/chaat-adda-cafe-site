@@ -1,0 +1,55 @@
+name: Bug report
+description: Report a reproducible problem
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping us improve the project. Do not include credentials, customer data or private files.
+  - type: input
+    id: repository_version
+    attributes:
+      label: Version or commit
+      description: Provide the release version or commit SHA where the problem occurs.
+      placeholder: v1.0.0 or abc1234
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem description
+      description: Explain what happened and what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open...
+        2. Select...
+        3. Observe...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include device, operating system, browser and Node.js version when relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots or logs
+      description: Remove secrets and personal information before attaching anything.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmation
+      options:
+        - label: I searched existing issues for duplicates.
+          required: true
+        - label: I removed credentials, private data and confidential information.
+          required: true
