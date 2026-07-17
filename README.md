@@ -1,71 +1,55 @@
 <div align="center">
 
-# Chaat Adda Café Website Demo
+# Chaat Adda Café Experience
 
-### A modern, animated and responsive café experience
+### Premium, animated and responsive restaurant website
 
-Built by [Sati Technologies](https://www.satitechnologies.com/)
+**Portfolio Demo by [Sati Technologies](https://www.satitechnologies.com/)**
 
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=flat-square&logo=nextdotjs)
+![React](https://img.shields.io/badge/React-18-20232A?style=flat-square&logo=react)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000000)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer)
 ![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=flat-square&logo=greensock&logoColor=000000)
 
 </div>
 
-## Overview
+## Project classification
 
-Chaat Adda is a portfolio/demo café website designed to present a food brand through a polished mobile-first experience. The project combines menu discovery, product highlights, gallery content, customer reviews, reservations and contact details in one responsive interface.
+**Portfolio Demo / Restaurant Website Concept**
 
-> Add the real deployed URL to the repository **About** panel before pinning this project.
+This repository demonstrates how Sati Technologies can present a café or restaurant through a polished, mobile-first digital experience. It should not be represented as an official client project without written authorization from the business owner.
 
-## Features
+## Experience overview
 
-- Modern landing page with animated visual sections
-- About and brand-story content
-- Menu and product presentation
-- Best-seller and popular-product sections
-- Responsive image gallery
-- Reservation enquiry form
-- Customer review presentation
-- Contact and location information
-- Mobile-first responsive layout
-- Smooth transitions, sliders and scroll-based animation
+The website combines brand storytelling, interactive menu discovery, food presentation, opening-hours logic, gallery content, offers, reservations, reviews, FAQs and contact journeys in one responsive interface.
+
+## Key capabilities
+
+- Cinematic landing section with clear calls to action
+- Dynamic open/closed business-hours status
+- Searchable and filterable menu experience
+- Signature dishes, best sellers and product sliders
+- Responsive photo gallery
+- Reservation and contact enquiry forms
+- Offers and pricing-ready content structure
+- Customer-review presentation
+- FAQ, directions and location journeys
+- Responsive layouts and motion-driven interactions
 
 ## Technology
 
 | Area | Technology |
 | --- | --- |
-| Framework | Next.js and React |
+| Framework | Next.js 14 and React 18 |
 | Language | JavaScript |
 | Styling | Tailwind CSS |
-| Animation | Framer Motion and GSAP |
+| Motion | Framer Motion and GSAP |
+| Forms | React Hook Form and Zod |
 | Sliders | Swiper |
-| Deployment | Add the real hosting provider |
 
-## Screenshots
-
-Add optimized screenshots before publishing the final README:
-
-```text
-docs/screenshots/desktop-home.png
-docs/screenshots/desktop-menu.png
-docs/screenshots/mobile-home.png
-docs/screenshots/mobile-menu.png
-```
-
-Then replace this section with a desktop/mobile screenshot table.
-
-## Getting started
-
-### Prerequisites
-
-- Node.js 24 LTS or a newer supported LTS release
-- npm 10 or newer
-
-### Installation
+## Local development
 
 ```bash
 git clone https://github.com/satitech-official/chaat-adda-cafe-site.git
@@ -76,53 +60,39 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## Scripts
+## Available scripts
 
-| Command | Purpose |
-| --- | --- |
-| `npm run dev` | Start the local development server |
-| `npm run lint` | Run linting |
-| `npm test` | Run tests when configured |
-| `npm run build` | Create a production build |
-| `npm start` | Start the production server |
-
-Update this table to match the actual `package.json` before publishing.
-
-## Project structure
-
-Document the real project structure after the source code is uploaded. A typical Next.js project may include:
-
-```text
-app/ or pages/
-components/
-public/
-styles/
-docs/screenshots/
-.github/
+```bash
+npm run dev
+npm run lint
+npm run build
+npm start
 ```
 
-## Quality checklist
+## Publication checklist
 
-- [ ] Full authorized source code is present.
-- [ ] No `.env` files, tokens, customer data or private assets are committed.
-- [ ] Installation instructions work from a fresh clone.
-- [ ] Linting and production build pass.
-- [ ] Images are optimized and have meaningful alternative text.
-- [ ] Keyboard navigation and color contrast are checked.
-- [ ] Desktop and mobile screenshots are included.
-- [ ] The live demo URL works.
-- [ ] Repository description and topics are complete.
-- [ ] Licensing has been approved.
+Before treating a release as portfolio-ready:
 
-## Contributing and security
+- Confirm lint and production build pass.
+- Add the approved live demo URL to the repository About panel.
+- Add optimized desktop and mobile screenshots under `docs/screenshots/`.
+- Verify all call, map, form and reservation actions.
+- Remove secrets, `.env` files, private customer data and unused assets.
+- Confirm permission or licensing for every logo, image, video and font.
+- Clearly label the repository as a demo unless official client permission exists.
 
-Use the Sati Technologies contribution and pull-request guidelines. Report vulnerabilities privately through `SECURITY.md`; do not publish them in an issue.
+## Recommended screenshots
 
-## Ownership and disclaimer
+```text
+docs/screenshots/desktop-home.png
+docs/screenshots/desktop-menu.png
+docs/screenshots/mobile-home.png
+docs/screenshots/mobile-menu.png
+```
 
-This repository should be described as a portfolio/demo implementation unless Sati Technologies has written authorization to represent it as an official client project. Brand names, logos and third-party assets remain the property of their respective owners.
+## Professional workflow
 
-Unless a separate license is added, no permission is granted to copy, modify or redistribute the source code.
+Use focused branches such as `feature/*`, `fix/*`, `content/*` and `chore/*`. Changes should be submitted through pull requests with lint, production build, responsive-layout and interaction checks completed before merge.
 
 ## Contact Sati Technologies
 
@@ -130,3 +100,7 @@ Unless a separate license is added, no permission is granted to copy, modify or 
 - Email: satitechinfo@gmail.com
 - WhatsApp: https://wa.me/919131043573
 - Instagram: https://www.instagram.com/satitech.official
+
+---
+
+Built by **Sati Technologies**, Indore, India — *Code. Create. Elevate.*
