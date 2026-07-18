@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Search, X, Flame, Leaf, Clock } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { menuCategories, menuItems } from "@/data/content";
 
 export default function MenuExplorer({ compact = false, initialCategory = "Best Sellers" }) {
@@ -13,6 +13,11 @@ export default function MenuExplorer({ compact = false, initialCategory = "Best 
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(null);
   const [sort, setSort] = useState("featured");
+
+  useEffect(() => {
+    const requestedCategory = new URLSearchParams(window.location.search).get("category");
+    if (requestedCategory && menuCategories.includes(requestedCategory)) setCategory(requestedCategory);
+  }, []);
 
   const filtered = useMemo(() => {
     let items = menuItems.filter((item) => {

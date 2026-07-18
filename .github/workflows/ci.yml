@@ -1,0 +1,51 @@
+name: Quality checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --silent
+
+      - name: Lint source
+        run: npm run lint -- --no-cache
+
+      - name: Build static website
+        id: build
+        continue-on-error: true
+        run: npm run build > build.log 2>&1
+
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chaat-adda-build-log
+          path: build.log
+          retention-days: 3
+
+      - name: Report build result
+        if: steps.build.outcome == 'failure'
+        run: |
+          tail -n 180 build.log
+          exit 1
+
+      - name: Show build summary
+        if: steps.build.outcome == 'success'
+        run: tail -n 80 build.log
