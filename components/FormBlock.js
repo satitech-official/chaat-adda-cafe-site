@@ -1,35 +1,35 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { contactSchema, franchiseSchema, newsletterSchema, reservationSchema } from "@/lib/validation";
+import { site } from "@/data/site";
 
 const configs = {
   contact: {
     schema: contactSchema,
-    endpoint: "/api/contact",
     fields: ["name", "phone", "email", "subject", "message"],
-    submit: "Send Message"
+    submit: "Send on WhatsApp",
+    title: "Contact inquiry"
   },
   reservation: {
     schema: reservationSchema,
-    endpoint: "/api/reservation",
     fields: ["name", "phone", "email", "date", "time", "guests", "seating", "occasion", "request"],
-    submit: "Request Booking"
+    submit: "Request on WhatsApp",
+    title: "Table reservation request"
   },
   franchise: {
     schema: franchiseSchema,
-    endpoint: "/api/franchise",
     fields: ["name", "phone", "email", "city", "state", "location", "investment", "experience", "message"],
-    submit: "Send Franchise Inquiry"
+    submit: "Send Franchise Inquiry",
+    title: "Franchise inquiry"
   },
   newsletter: {
     schema: newsletterSchema,
-    endpoint: "/api/newsletter",
     fields: ["email"],
-    submit: "Subscribe"
+    submit: "Join via WhatsApp",
+    title: "Cafe updates request"
   }
 };
 
@@ -38,20 +38,16 @@ export default function FormBlock({ type = "contact", compact = false }) {
   const [status, setStatus] = useState(null);
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm({ resolver: zodResolver(config.schema), defaultValues: { consent: false, website: "" } });
 
-  async function onSubmit(values) {
+  function onSubmit(values) {
     setStatus(null);
-    const response = await fetch(config.endpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values)
-    });
-    const data = await response.json();
-    if (!response.ok) {
-      setStatus({ type: "error", message: data.message || "Something went wrong. Please try again." });
-      return;
-    }
+    const details = config.fields
+      .filter((field) => values[field] !== undefined && values[field] !== "")
+      .map((field) => `${field.replace(/([A-Z])/g, " $1")}: ${values[field]}`)
+      .join("\n");
+    const message = `${config.title}\n\n${details}\n\nSent from the CHAAT ADDA website demo.`;
+    window.open(`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
     reset();
-    setStatus({ type: "success", message: data.message });
+    setStatus({ type: "success", message: "WhatsApp opened with your request. Please send the prepared message to complete the inquiry." });
   }
 
   return (
@@ -65,9 +61,9 @@ export default function FormBlock({ type = "contact", compact = false }) {
         I consent to being contacted about this request. Bookings are confirmed manually by the cafe team.
       </label>
       {errors.consent && <p className="text-sm font-bold text-terracotta">{errors.consent.message}</p>}
-      {status && <p role="status" className={`rounded-2xl p-4 font-bold ${status.type === "success" ? "bg-olive/15 text-olive" : "bg-terracotta/15 text-terracotta"}`}>{status.message}</p>}
+      {status && <p role="status" className="rounded-2xl bg-olive/15 p-4 font-bold text-olive">{status.message}</p>}
       <button disabled={isSubmitting} className="btn-primary disabled:cursor-not-allowed disabled:opacity-70">
-        {isSubmitting && <Loader2 className="animate-spin" size={18} />}{config.submit}
+        {config.submit}
       </button>
     </form>
   );
