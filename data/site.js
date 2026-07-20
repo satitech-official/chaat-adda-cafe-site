@@ -1,3 +1,6 @@
+const assetBase = process.env.NEXT_PUBLIC_ASSET_BASE || "";
+const asset = (path) => `${assetBase}${path}`;
+
 export const site = {
   name: "CHAAT ADDA",
   shortName: "CHAAT ADDA",
@@ -11,7 +14,7 @@ export const site = {
   email: "chaatadda@gmail.com",
   timezone: "Asia/Kolkata",
   mapQuery: "Chaat Adda, 4-D, Sudama Nagar, Indore, Madhya Pradesh",
-  logo: "/chaat-assets/logo.png",
+  logo: asset("/chaat-assets/logo.png"),
   hours: [
     { day: "Monday", open: "10:00", close: "23:00" },
     { day: "Tuesday", open: "10:00", close: "23:00" },
@@ -44,20 +47,20 @@ export const nav = [
 ];
 
 export const imageBank = {
-  hero: "/chaat-assets/food-g-110.jpg",
-  chaatShots: "/chaat-assets/food-g-86.jpg",
-  paniPuri: "/chaat-assets/food-g-87.jpg",
-  kulhad: "/chaat-assets/food-g-103.jpg",
-  dahiPuri: "/chaat-assets/food-g-92.jpg",
-  sandwich: "/chaat-assets/food-g-83.jpg",
-  interior: "/chaat-assets/food-g-36.jpg",
-  counter: "/chaat-assets/food-g-100.jpg",
-  storefront: "/chaat-assets/food-g-58.jpg",
-  opening: "/chaat-assets/food-g-110.jpg",
-  neon: "/chaat-assets/food-g-97.jpg",
-  exterior: "/chaat-assets/food-g-109.jpg",
-  entrance: "/chaat-assets/food-g-108.jpg",
-  wallLogo: "/chaat-assets/food-g-107.jpg",
-  balloons: "/chaat-assets/food-g-106.jpg",
-  logo: "/chaat-assets/logo.png"
+  hero: asset("/chaat-assets/food-g-110.jpg"),
+  chaatShots: asset("/chaat-assets/food-g-86.jpg"),
+  paniPuri: asset("/chaat-assets/food-g-87.jpg"),
+  kulhad: asset("/chaat-assets/food-g-103.jpg"),
+  dahiPuri: asset("/chaat-assets/food-g-92.jpg"),
+  sandwich: asset("/chaat-assets/food-g-83.jpg"),
+  interior: asset("/chaat-assets/food-g-36.jpg"),
+  counter: asset("/chaat-assets/food-g-100.jpg"),
+  storefront: asset("/chaat-assets/food-g-58.jpg"),
+  opening: asset("/chaat-assets/food-g-110.jpg"),
+  neon: asset("/chaat-assets/food-g-97.jpg"),
+  exterior: asset("/chaat-assets/food-g-109.jpg"),
+  entrance: asset("/chaat-assets/food-g-108.jpg"),
+  wallLogo: asset("/chaat-assets/food-g-107.jpg"),
+  balloons: asset("/chaat-assets/food-g-106.jpg"),
+  logo: asset("/chaat-assets/logo.png")
 };
