@@ -6,6 +6,8 @@
 
 **Portfolio Demo by [Sati Technologies](https://www.satitechnologies.com/)**
 
+### [🌐 Open Live Demo](https://satitech-official.github.io/chaat-adda-cafe-site/)
+
 ![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=flat-square&logo=nextdotjs)
 ![React](https://img.shields.io/badge/React-18-20232A?style=flat-square&logo=react)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000000)
