@@ -38,6 +38,11 @@ jobs:
       - name: Build static website
         run: npm run build
 
+      - name: Fix public asset paths for project Pages
+        run: |
+          find out -type f \( -name '*.html' -o -name '*.txt' -o -name '*.xml' \) -print0 | \
+            xargs -0 sed -i 's#\(["'"'"'(=]\)/chaat-assets/#\1/chaat-adda-cafe-site/chaat-assets/#g'
+
       - name: Add fallback page
         run: cp out/index.html out/404.html
 
